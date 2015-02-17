@@ -16,7 +16,7 @@ var makePerson = function(persArr){
 
     var sumAge = arr[0]["age"];
 
-    for (var i = 1, len = arr.length; i < len; i = i + 1) {
+    for (var i = 1; i < arr.length; i = i + 1) {
         if (result.minAge > arr[i]["age"])
         {
             result.minAge = arr[i]["age"];
