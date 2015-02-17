@@ -25,12 +25,14 @@ window.onload = function(){
 				// Spara gissningen.
 				previousGuesses.push(number);
 
-				// Är gissningen lägre (antas), högre eller korrekt?
-				result[1] = "Det hemliga talet är mindre!";
-				if (number < secret) {
+				// Är gissningen lägre, högre eller korrekt?
+				if (number > secret) {
+					result[1] = "Det hemliga talet är mindre!";
+				}
+				else if (number < secret) {
 					result[1] = "Det hemliga talet är större!";
 				}
-				else if (number === secret) {
+				else {
 					result[0] = true;
 					result[1] = "Grattis du vann! Det hemliga talet var " + secret +
 					            " och du behövde " + previousGuesses.length + " gissningar för att hitta det.";
