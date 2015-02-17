@@ -4,6 +4,13 @@ window.onload = function(){
 
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var convertString = function(str){
+
+		// Om strängen är tom, null eller undefined kasta ett undantag.
+		if (!str || 0 === str.length)
+		{
+			throw new Error("Strängen kan inte vara tom.");
+		}
+
 		// Ersätt alla a och A med #.
 		var result = str.replace(/a/gi, "#");
 
