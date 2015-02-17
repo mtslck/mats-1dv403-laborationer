@@ -1,6 +1,7 @@
 "use strict";
 
 window.onload = function(){
+	var MAX_NUMBER_OF_GUESSES = 7;
 	var secret = Math.floor(Math.random() * 100 + 1);
 	var previousGuesses = new Array();
 
@@ -36,7 +37,7 @@ window.onload = function(){
 				}
 
 				// Om sista gissningen är fel avsluta och visa det hemliga talet.
-				if (previousGuesses.length === 7 && result[0] !== true) {
+				if (previousGuesses.length === MAX_NUMBER_OF_GUESSES && result[0] !== true) {
 					result[0] = true;
 					result[1] += " Du har inga gissningar kvar. Det hemliga talet var " + secret + ".";
 				}
