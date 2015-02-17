@@ -4,14 +4,17 @@ window.onload = function(){
 
 	
 	var birthday = function(date){
-		
 
+		var currentTime = new Date();
+		var today =  new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate());
+		var birthdate = new Date(date);
+		var nextBirthday = new Date(new Date().getFullYear(), birthdate.getMonth(), birthdate.getDate());
 
-			// Din kod här.
+		if (nextBirthday < today) {
+			nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+		}
 
-
-
-
+		return (nextBirthday - today) / (24 * 60 * 60 * 1000);
 	};
 	// ------------------------------------------------------------------------------
 
