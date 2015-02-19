@@ -30,14 +30,21 @@ var MessageBoard = {
         // Ta bort.
         var divDelete = document.createElement("div");
         divDelete.innerHTML = "X";
-        divDelete.onclick = function() {
-            MessageBoard.removeMessage(MessageBoard.messages.indexOf(message));
-        };
+        divDelete.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (confirm("Ta bort meddelandet?")) {
+                MessageBoard.removeMessage(MessageBoard.messages.indexOf(message));
+            }
+        });
         article.insertBefore(divDelete, article.firstChild);
 
         // Tid.
         var divTime = document.createElement("div");
         divTime.innerHTML = message.toShortTimeString();
+        divTime.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert(message.getDate().toLocaleString());
+        });
         article.appendChild(divTime);
     }
 };

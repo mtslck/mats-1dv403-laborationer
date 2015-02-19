@@ -39,5 +39,5 @@ Message.prototype.toHtmlString = function() {
 };
 
 Message.prototype.toShortTimeString = function() {
-    return this.getDate().toISOString().slice(11, 16);
+    return this.getDate().toLocaleTimeString();
 };
